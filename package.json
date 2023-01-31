@@ -1,0 +1,24 @@
+{
+  "name": "taskmanagmentapp",
+  "version": "1.0.0",
+  "description": "This is a Task Management app that lets you keep track of your everyday activities",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inzushareef/TaskmanagmentApp.git"
+  },
+  "author": "Inzamamul Shareef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inzushareef/TaskmanagmentApp/issues"
+  },
+  "homepage": "https://github.com/inzushareef/TaskmanagmentApp#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
