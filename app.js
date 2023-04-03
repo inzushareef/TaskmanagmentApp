@@ -1,33 +1,48 @@
+let items = [];
+
 const express = require("express");
 
 let ejs = require('ejs');
 
 const bodyParser = require("body-parser");
 
-const res = require("express/lib/response");
-const { render } = require("express/lib/response");
-
 const app = express();
+
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.set('view engine', 'ejs');
 
 
-app.get("/",function(req,res){
+app.get("/", function (req, res) {
 
     const today = new Date();
 
-    const day = today.getDay();
+    let options = { 
+        weekday: 'long',
+        // year: 'numeric', 
+        day: 'numeric',
+        month: 'long', 
+         
+    };
 
-    if(day === 0 || day === 2){
-        res.render('list', { day: "Weekend" , task: "Party"});
-      
-    }else{
-        
-        res.render('list', { day: "Weekday", task: "Work"});
-    }
+    const day = today.toLocaleString("en-US", options);
+    
+    res.render("list", {
+        KindOfDay: day,
+        newListItems : items
+    })
+})
+
+app.post("/", function(req,res){
+    //console.log(req.body.task);
+
+    items.push(req.body.task);
+    res.redirect("/");
+    
+
 })
 
 
-app.listen(3000,()=>{
+app.listen(3000, () => {
     console.log("listening on Port 3000");
 });
