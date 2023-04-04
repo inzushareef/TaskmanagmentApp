@@ -15,19 +15,25 @@
     </div>
 
     <div class="box">
-        <ul>
-    
+        
             <% for (var i = 0; i<newListItems.length; i++){ %>
-            <li class="item"> <input type="checkbox" name="" id=""> <%= newListItems[i] %> </li>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= newListItems[i] %></p>
+                </div>
+            
             <% } %>
             
-        </ul>
-        <form action="/" method="post">
-            <input type="text" name="task">
+        
+        <form class="item" action="/" method="post">
+            <input type="text" name="task" placeholder="New Item" >
             <button type="submit">+</button>
         </form>
     </div>
    
+    
+        <footer>Copyright Inzurock</footer>
+    
     
 </body>
 
